@@ -21,15 +21,15 @@ class JwtController extends Controller {
 
     async getMsg(){
         
-        let token = this.ctx.request.header.token;
+        // let token = this.ctx.request.header.token;
         // console.log(token);
-        // this.ctx.body = "hello jwt"
-        try{
-            let decode = this.app.jwt.verify(token, this.app.config.jwt.secret);
-            this.ctx.body = "hello jwt"
-        }catch(e){
-            this.ctx.body="token验证失败"
-        }
+        this.ctx.body = "hello jwt"
+        // try{
+        //     let decode = this.app.jwt.verify(token, this.app.config.jwt.secret);
+        //     this.ctx.body = "hello jwt"
+        // }catch(e){
+        //     this.ctx.body="token验证失败"
+        // }
 
     }
 

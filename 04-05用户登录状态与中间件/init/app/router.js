@@ -11,6 +11,6 @@ module.exports = app => {
   router.post('/logout', controller.home.logout);
   router.get('/jwt', controller.jwt.index);
   router.post("/jwtlogin", controller.jwt.doLogin);
-  router.get("/jwtmsg", controller.jwt.getMsg);
+  router.get("/jwtmsg", app.middleware.checktoken(), controller.jwt.getMsg);
 
 };
